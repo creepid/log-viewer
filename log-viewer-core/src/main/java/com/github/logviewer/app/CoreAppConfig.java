@@ -32,7 +32,7 @@ import java.util.Properties;
  * Created by rusakovich on 16.10.2017.
  */
 @Configuration
-@Import({ConfigValueAppConfig.class})
+@Import({StartupAppConfig.class, ConfigValueAppConfig.class})
 public class CoreAppConfig {
 
     public static final String BEAN_LOGVIEWER_PROPS = "logViewerProps";
