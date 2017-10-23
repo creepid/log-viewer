@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.BeanSerializerModifier;
 import com.fasterxml.jackson.databind.type.MapType;
+import com.github.logviewer.fields.FieldJsonMapper;
 import com.github.logviewer.fields.FieldsMap;
 import org.apache.commons.lang.ArrayUtils;
 import org.slf4j.Logger;
@@ -131,6 +132,16 @@ public class CoreAppConfig {
 
         jsonMapper.registerModule(module);
         return jsonMapper;
+    }
+
+    /**
+     * Used for proper serilization/deserilization of {@link FieldsMap}s.
+     *
+     * @return
+     */
+    @Bean
+    public FieldJsonMapper fieldJsonMapper() {
+        return new FieldJsonMapper();
     }
 
 
