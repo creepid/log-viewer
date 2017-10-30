@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.BeanSerializerModifier;
 import com.fasterxml.jackson.databind.type.MapType;
+import com.github.logviewer.config.BeanConfigFactoryManager;
 import com.github.logviewer.fields.FieldJsonMapper;
 import com.github.logviewer.fields.FieldsMap;
 import org.apache.commons.lang.ArrayUtils;
@@ -142,6 +143,17 @@ public class CoreAppConfig {
     @Bean
     public FieldJsonMapper fieldJsonMapper() {
         return new FieldJsonMapper();
+    }
+
+    /**
+     * Used for proper serilization/deserilization of {@link ConfiguredBean}s as
+     * key concept for persisting models in logviewer.
+     *
+     * @return a {@link BeanConfigFactoryManager} instance
+     */
+    @Bean
+    public BeanConfigFactoryManager beanConfigFactoryManager() {
+        return new BeanConfigFactoryManager();
     }
 
 
