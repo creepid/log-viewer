@@ -41,7 +41,6 @@ public class BeanConfigFactoryManager implements ConfigBeanTypeResolver {
     private ConfigInjector configInjector;
 
     private final Map<Class<? extends ConfiguredBean>, List<String>> configBeanNames = new HashMap<>();
-    ;
 
     @SuppressWarnings("unchecked")
     @PostConstruct
