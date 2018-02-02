@@ -35,8 +35,6 @@ import com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.TextNode;
 import com.github.logviewer.app.ContextProvider;
-import com.github.logviewer.fields.FieldsMap.FieldsMapTypeSafeDeserializer;
-import com.github.logviewer.fields.FieldsMap.FieldsMapTypeSafeSerializer;
 
 
 /**

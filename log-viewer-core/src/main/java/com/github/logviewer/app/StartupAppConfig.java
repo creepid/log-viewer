@@ -21,13 +21,13 @@ public class StartupAppConfig {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Value("${logviewer.home}")
-    private String logSnifferHomeDir;
+    private String logViewerHomeDir;
 
     @Value("${logviewer.version}")
     private String version;
 
     /**
-     * Checks the home dir under ${logsniffer.home} for write access, creates it
+     * Checks the home dir under ${logviewerhome} for write access, creates it
      * if necessary and writes a template config.properties.
      *
      * @return home directory representation
@@ -35,7 +35,7 @@ public class StartupAppConfig {
      */
     @Bean
     public LogViewerHome homeDir() throws Exception {
-        File logViewerHomeDirFile = new File(logSnifferHomeDir);
+        File logViewerHomeDirFile = new File(logViewerHomeDir);
         logger.info("Starting LogViewer {} with home directory {}", version, logViewerHomeDirFile.getPath());
 
         if (!logViewerHomeDirFile.exists()) {
@@ -72,7 +72,7 @@ public class StartupAppConfig {
         return new LogViewerHome() {
             @Override
             public File getHomeDir() {
-                return new File(logSnifferHomeDir);
+                return new File(logViewerHomeDir);
             }
         };
     }
